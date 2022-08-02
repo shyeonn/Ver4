@@ -1,0 +1,134 @@
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 22.0.0.2
+gem5 compiled Aug  1 2022 08:47:18
+gem5 started Aug  2 2022 03:00:44
+gem5 executing on codespaces-4933b6, pid 10522
+command line: ../gem5/build/X86/gem5.opt --outdir=./test1/test se.py --cpu-type DerivO3CPU -n 16 --cpu-clock 3GHz --mem-type HBM_2000_4H_1x64 --mem-channels 2 --caches --l2cache --cmd ./workload/stream_omp.1M_1T
+
+**** REAL SIMULATION ****
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 1000000 (elements), Offset = 0 (elements)
+Memory per array = 7.6 MiB (= 0.0 GiB).
+Total memory required = 22.9 MiB (= 0.0 GiB).
+Each kernel will be executed 3 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 16
+Number of Threads counted = 16
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 1008 microseconds.
+   (= 1008 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:            9373.4     0.001752     0.001707     0.001797
+Scale:          10031.2     0.001614     0.001595     0.001632
+Add:            10247.7     0.002346     0.002342     0.002350
+Triad:          10243.5     0.002352     0.002343     0.002362
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+Exiting @ tick 41620234104 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 22.0.0.2
+gem5 compiled Aug  1 2022 08:47:18
+gem5 started Aug  2 2022 03:40:17
+gem5 executing on codespaces-4933b6, pid 31743
+command line: ../gem5/build/X86/gem5.opt --outdir=./test1/test se.py --cpu-type DerivO3CPU -n 16 --cpu-clock 3GHz --mem-type GDDR5_4000_2x32 --mem-channels 2 --caches --l2cache --cmd ./workload/stream_omp.1M_1T
+
+**** REAL SIMULATION ****
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 1000000 (elements), Offset = 0 (elements)
+Memory per array = 7.6 MiB (= 0.0 GiB).
+Total memory required = 22.9 MiB (= 0.0 GiB).
+Each kernel will be executed 3 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 16
+Number of Threads counted = 16
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 942 microseconds.
+   (= 942 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           11157.8     0.001435     0.001434     0.001435
+Scale:          11535.7     0.001390     0.001387     0.001394
+Add:            11644.8     0.002061     0.002061     0.002062
+Triad:          11707.1     0.002052     0.002050     0.002053
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+Exiting @ tick 35321529114 because exiting with last active thread context
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 22.0.0.2
+gem5 compiled Aug  1 2022 08:47:18
+gem5 started Aug  2 2022 02:41:06
+gem5 executing on codespaces-4933b6, pid 2147
+command line: ../gem5/build/X86/gem5.opt --outdir=./test1/test se.py --cpu-type DerivO3CPU -n 16 --cpu-clock 3GHz --mem-type DDR4_2400_16x4 --mem-channels 2 --caches --l2cache --cmd ./workload/stream_omp.1M_1T
+
+**** REAL SIMULATION ****
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 1000000 (elements), Offset = 0 (elements)
+Memory per array = 7.6 MiB (= 0.0 GiB).
+Total memory required = 22.9 MiB (= 0.0 GiB).
+Each kernel will be executed 10 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 16
+Number of Threads counted = 16
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 923 microseconds.
+   (= 923 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           11307.3     0.001426     0.001415     0.001442
+Scale:          11380.2     0.001421     0.001406     0.001435
+Add:            11493.9     0.002100     0.002088     0.002115
+Triad:          11444.9     0.002114     0.002097     0.002133
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+Exiting @ tick 85503916161 because exiting with last active thread context
