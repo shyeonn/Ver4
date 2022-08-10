@@ -479,7 +479,7 @@ void checkSTREAMresults ()
 		epsilon = 1.e-13;
 	}
 	else {
-		printf("WEIRD: sizeof(STREAM_TYPE) = %lu\n",sizeof(STREAM_TYPE));
+		printf("WEIRD: sizeof(STREAM_TYPE) = %u\n",sizeof(STREAM_TYPE));
 		epsilon = 1.e-6;
 	}
 

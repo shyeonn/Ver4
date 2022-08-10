@@ -1,0 +1,49 @@
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 22.0.0.2
+gem5 compiled Aug  1 2022 08:47:18
+gem5 started Aug  3 2022 05:21:14
+gem5 executing on codespaces-4933b6, pid 2773
+command line: ../gem5/build/X86/gem5.opt --outdir=./result/test8/HBM_2000_4H_1x64 se.py --cpu-type DerivO3CPU -n 16 --cpu-clock 4GHz --mem-type HBM_2000_4H_1x64 --mem-channels 2 --mem-size 2GB --caches --l2cache --cmd ./workload/stream_omp_X86.2M
+
+../gem5/build/X86/gem5.opt --outdir=./result/test8/HBM_2000_4H_1x64 se.py --cpu-type DerivO3CPU -n 16 --cpu-clock 4GHz --mem-type HBM_2000_4H_1x64 --mem-channels 4 --mem-size 2GB --caches --l2cache --cmd ./workload/stream_omp_X86.2M >> ./result/test8/result_HBM_2000_4H_1x64
+
+
+info: Standard input is not a terminal, disabling listeners.
+**** REAL SIMULATION ****
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 2000000 (elements), Offset = 0 (elements)
+Memory per array = 15.3 MiB (= 0.0 GiB).
+Total memory required = 45.8 MiB (= 0.0 GiB).
+Each kernel will be executed 3 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 16
+Number of Threads counted = 16
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 1906 microseconds.
+   (= 1906 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:            9512.2     0.003374     0.003364     0.003383
+Scale:          10142.7     0.003188     0.003155     0.003220
+Add:            10443.9     0.004599     0.004596     0.004603
+Triad:          10455.0     0.004627     0.004591     0.004662
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+Exiting @ tick 80694627000 because exiting with last active thread context
