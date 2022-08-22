@@ -5,7 +5,7 @@
 
 #../gem5/build/X86/gem5.opt --outdir=./test1 se.py -n 1 - --sys-voltage 1V --cmd ./workload/stream.1M --output result
 
-testnum=9
+testnum=11
 isa="X86"
 if [ -d "./result/HBM_compare/test$testnum" ]; then
     rm -r ./result/HBM_compare/test$testnum
@@ -23,19 +23,20 @@ echo \
 7 : dual, openMP 
 8 : core= 4
 9 : core= 8
+10 : L2 delete
 
  " \
 > ./result/HBM_compare/test$testnum/log.txt 
 
 MEM_var=HBM_2000_4H_1x64
 
-for MEM_chan in 1 2 4 8 16 32  #메모리 종류 변경(default : 512MB) 
+for MEM_chan in 1 2 4 8 16  #메모리 종류 변경(default : 512MB) 
 do
 ../gem5/build/$isa/gem5.opt \
 --outdir=./result/HBM_compare/test$testnum/${MEM_chan}channel se.py \
---cpu-type X86O3CPU -n 1 --cpu-clock 4GHz --num-cpus 8 \
+--cpu-type X86O3CPU --cpu-clock 4GHz --num-cpus 8 \
 --mem-type $MEM_var --mem-channels $MEM_chan \
---caches --l2cache \
+--caches \
 --cmd ./workload/stream_strcpy_MP.1M \
 >> ./result/HBM_compare/test$testnum/${MEM_chan}channel.txt &
 done
