@@ -5,35 +5,37 @@
 
 #../gem5/build/X86/gem5.opt --outdir=./test1 se.py -n 1 - --sys-voltage 1V --cmd ./workload/stream.1M --output result
 
-testnum=11
+testnum=7
 isa="X86"
-if [ -d "./result/test$testnum" ]; then
-    rm -r ./result/test$testnum
+if [ -d "./result/HBM_compare/test$testnum" ]; then
+    rm -r ./result/HBM_compare/test$testnum
 fi
-mkdir ./result/test$testnum
+mkdir ./result/HBM_compare/test$testnum
 
 echo \
 "[version log]
-3 : default
---cpu-type DerivO3CPU -n 8 --cpu-clock 3GHz --mem-type DDR4_2400_16x4 --mem-channels 4 --caches --l2cache --cmd ./workload/stream_omp.1M_1T
-4 : mem-channels 4->2
-5 : cpu-clock 3GHz -> 4GHz | mem-channels 2->4 
-6 : workload 1M -> 10M | mem-size 512MB -> 2GB | mem-channels 2->8 | except DDR4
-7 : ISA : ARM | goback default
-6-1 : cpu core = 16 -2 : memchannels 1 -3 : mem-channels 2
-9 : Memchannel = 1, nocache
-10: " \
-> ./result/test$testnum/Change.txt 
-    
-for MEM_var in HBM_2000_4H_1x64 GDDR5_4000_2x32 DDR4_2400_16x4   #메모리 종류 변경(default : 512MB) 
+1 : TimingsimpleCPU/1_core/4GHz_clock/nocache/no_openMP
+2 : workload -> memmove 
+3 : for loop unroll
+4 : add L1 cache 
+5 : add L2 cache
+6 : OOO single
+7 : dual, openMP 
+
+ " \
+> ./result/HBM_compare/test$testnum/log.txt 
+
+MEM_var=HBM_2000_4H_1x64
+
+for MEM_chan in 1 2 4 8 16 32  #메모리 종류 변경(default : 512MB) 
 do
 ../gem5/build/$isa/gem5.opt \
---outdir=./result/test$testnum/$MEM_var se.py \
---cpu-type DerivO3CPU -n 8 --cpu-clock 4GHz \
+--outdir=./result/HBM_compare/test$testnum/${MEM_chan}channel se.py \
+--cpu-type X86O3CPU -n 1 --cpu-clock 4GHz --num-cpus 2 \
+--mem-type $MEM_var --mem-channels $MEM_chan \
 --caches --l2cache \
---mem-type $MEM_var  \
---cmd ./workload/stream_omp_$isa.1M \
->> ./result/test$testnum/result_$MEM_var.txt &
+--cmd ./workload/stream_strcpy_MP.1M \
+>> ./result/HBM_compare/test$testnum/${MEM_chan}channel.txt &
 done
 
 

@@ -1,0 +1,37 @@
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 22.0.0.2
+gem5 compiled Aug  8 2022 00:57:17
+gem5 started Aug 22 2022 04:42:35
+gem5 executing on codespaces-4933b6, pid 16616
+command line: ../gem5/build/X86/gem5.opt --outdir=./result/HBM_compare/test7/16channel se.py --cpu-type X86O3CPU -n 1 --cpu-clock 4GHz --num-cpus 2 --mem-type HBM_2000_4H_1x64 --mem-channels 16 --caches --l2cache --cmd ./workload/stream_strcpy_MP.1M
+
+info: Standard input is not a terminal, disabling listeners.
+**** REAL SIMULATION ****
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 1000000 (elements), Offset = 0 (elements)
+Memory per array = 7.6 MiB (= 0.0 GiB).
+Total memory required = 22.9 MiB (= 0.0 GiB).
+Each kernel will be executed 4 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 2
+Number of Threads counted = 2
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 5733 microseconds.
+   (= 5733 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------

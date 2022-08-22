@@ -314,8 +314,12 @@ main()
         tuned_STREAM_Copy();
 #else
 #pragma omp parallel for
+	printf("time1 : %f\n", mysecond());
 	for (j=0; j<STREAM_ARRAY_SIZE; j++)
 	    c[j] = a[j];
+
+//	memcpy(c,a,sizeof(STREAM_TYPE)*STREAM_ARRAY_SIZE);
+	printf("time2 : %f\n", mysecond());
 #endif
 	times[0][k] = mysecond() - times[0][k];
 	
@@ -362,12 +366,12 @@ main()
 	    }
 	}
     
-    printf("Function    Best Rate MB/s  Avg time     Min time     Max time\n");
+    printf("Function    Best Rate GB/s  Avg time     Min time     Max time\n");
     for (j=0; j<4; j++) {
 		avgtime[j] = avgtime[j]/(double)(NTIMES-1);
 
 		printf("%s%12.1f  %11.6f  %11.6f  %11.6f\n", label[j],
-	       1.0E-06 * bytes[j]/mintime[j],
+	       1.0E-09 * bytes[j]/mintime[j],
 	       avgtime[j],
 	       mintime[j],
 	       maxtime[j]);
@@ -479,7 +483,7 @@ void checkSTREAMresults ()
 		epsilon = 1.e-13;
 	}
 	else {
-		printf("WEIRD: sizeof(STREAM_TYPE) = %u\n",sizeof(STREAM_TYPE));
+		printf("WEIRD: sizeof(STREAM_TYPE) = %lu\n",sizeof(STREAM_TYPE));
 		epsilon = 1.e-6;
 	}
 
