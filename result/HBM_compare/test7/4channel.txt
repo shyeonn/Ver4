@@ -2,10 +2,10 @@ Global frequency set at 1000000000000 ticks per second
 gem5 Simulator System.  https://www.gem5.org
 gem5 is copyrighted software; use the --copyright option for details.
 
-gem5 version 22.0.0.2
-gem5 compiled Aug  8 2022 00:57:17
-gem5 started Aug 22 2022 04:42:35
-gem5 executing on codespaces-4933b6, pid 16614
+gem5 version 22.0.0.1
+gem5 compiled Jul 25 2022 13:56:51
+gem5 started Aug 22 2022 14:31:51
+gem5 executing on swsoc4, pid 11630
 command line: ../gem5/build/X86/gem5.opt --outdir=./result/HBM_compare/test7/4channel se.py --cpu-type X86O3CPU -n 1 --cpu-clock 4GHz --num-cpus 2 --mem-type HBM_2000_4H_1x64 --mem-channels 4 --caches --l2cache --cmd ./workload/stream_strcpy_MP.1M
 
 info: Standard input is not a terminal, disabling listeners.
@@ -26,8 +26,8 @@ Number of Threads requested = 2
 Number of Threads counted = 2
 -------------------------------------------------------------
 Your clock granularity/precision appears to be 1 microseconds.
-Each test below will take on the order of 5779 microseconds.
-   (= 5779 clock ticks)
+Each test below will take on the order of 5775 microseconds.
+   (= 5775 clock ticks)
 Increase the size of the arrays if this shows that
 you are not getting at least 20 clock ticks per test.
 -------------------------------------------------------------
@@ -35,3 +35,12 @@ WARNING -- The above is only a rough guideline.
 For best results, please be sure you know the
 precision of your system timer.
 -------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:            2049.4     0.007809     0.007807     0.007811
+Scale:           2982.8     0.005365     0.005364     0.005365
+Add:             4446.9     0.005397     0.005397     0.005398
+Triad:           4516.4     0.005315     0.005314     0.005315
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+Exiting @ tick 130065701750 because exiting with last active thread context

@@ -980,7 +980,7 @@
                         "cmd": [
                             "./workload/stream_strcpy_MP.1M"
                         ],
-                        "cwd": "/workspaces/bootcamp-assignment-shyeonn/Ver4",
+                        "cwd": "/UHome/psh32418/194/Ver4",
                         "drivers": [],
                         "egid": 100,
                         "env": [],
@@ -988,7 +988,7 @@
                         "euid": 100,
                         "eventq_index": 0,
                         "executable": "./workload/stream_strcpy_MP.1M",
-                        "gid": 0,
+                        "gid": 6000,
                         "input": "cin",
                         "kvmInSE": false,
                         "maxStackSize": 67108864,

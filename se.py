@@ -50,7 +50,7 @@ from m5.objects import *
 from m5.params import NULL
 from m5.util import addToPath, fatal, warn
 
-addToPath('/workspaces/bootcamp-assignment-shyeonn/gem5/configs')
+addToPath('../gem5/configs')
 
 
 from ruby import Ruby

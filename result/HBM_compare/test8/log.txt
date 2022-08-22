@@ -1,0 +1,11 @@
+[version log]
+1 : TimingsimpleCPU/1_core/4GHz_clock/nocache/no_openMP
+2 : workload -> memmove 
+3 : for loop unroll
+4 : add L1 cache 
+5 : add L2 cache
+6 : OOO single
+7 : dual, openMP 
+8 : core= 4
+
+ 
