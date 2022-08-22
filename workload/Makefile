@@ -52,6 +52,10 @@ openMP:
 	gcc -O -fopenmp -DSTREAM_ARRAY_SIZE=1000000 stream_strcpy.c -o stream_strcpy_MP.1M
 	./stream_strcpy_MP.1M
 
+openMP_2:
+	gcc -O -fopenmp -DSTREAM_ARRAY_SIZE=1000000 stream_strcpy.c -o stream_strcpy_MP_2.1M
+	./stream_strcpy_MP_2.1M
+
 
 openMP_10M:
 	gcc -O -fopenmp -DSTREAM_ARRAY_SIZE=10000000 stream_strcpy.c -o stream_strcpy_MP.10M

@@ -324,12 +324,12 @@ main()
         tuned_STREAM_Copy();
 #else
 #pragma omp parallel for
-for (j=0; j<thread_num; j++)
-{
-	memcpy(&c[STREAM_ARRAY_SIZE/thread_num*j],&a[STREAM_ARRAY_SIZE/thread_num*j],STREAM_ARRAY_SIZE*BytesPerWord/thread_num);
-}	
-//	for (j=0; j<STREAM_ARRAY_SIZE; j++)
-//	    c[j] = a[j];
+//for (j=0; j<thread_num; j++)
+//{
+//	memcpy(&c[STREAM_ARRAY_SIZE/thread_num*j],&a[STREAM_ARRAY_SIZE/thread_num*j],STREAM_ARRAY_SIZE*BytesPerWord/thread_num);
+//}	
+	for (j=0; j<STREAM_ARRAY_SIZE; j++)
+	    c[j] = a[j];
 #endif
 	times[0][k] = mysecond() - times[0][k];
 	

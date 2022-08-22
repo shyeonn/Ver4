@@ -1,0 +1,46 @@
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 22.0.0.1
+gem5 compiled Jul 25 2022 13:56:51
+gem5 started Aug 22 2022 16:58:02
+gem5 executing on swsoc4, pid 10926
+command line: ../gem5/build/X86/gem5.opt --outdir=./result/HBM_compare/test12/2channel se.py --cpu-type X86O3CPU --cpu-clock 4GHz --num-cpus 16 --mem-type HBM_2000_4H_1x64 --mem-channels 2 --caches --cmd ./workload/stream_strcpy_MP_2.1M
+
+info: Standard input is not a terminal, disabling listeners.
+**** REAL SIMULATION ****
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 1000000 (elements), Offset = 0 (elements)
+Memory per array = 7.6 MiB (= 0.0 GiB).
+Total memory required = 22.9 MiB (= 0.0 GiB).
+Each kernel will be executed 4 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 16
+Number of Threads counted = 16
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 890 microseconds.
+   (= 890 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:            9732.3     0.001647     0.001644     0.001650
+Scale:          13168.9     0.001221     0.001215     0.001227
+Add:            15706.6     0.001689     0.001528     0.001888
+Triad:          15484.3     0.001561     0.001550     0.001571
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+Exiting @ tick 39695445500 because exiting with last active thread context
