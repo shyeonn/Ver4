@@ -5,7 +5,7 @@
 
 #../gem5/build/X86/gem5.opt --outdir=./test1 se.py -n 1 - --sys-voltage 1V --cmd ./workload/stream.1M --output result
 
-testnum=12
+testnum=13
 isa="X86"
 if [ -d "./result/HBM_compare/test$testnum" ]; then
     rm -r ./result/HBM_compare/test$testnum
@@ -26,18 +26,22 @@ echo \
 10 : L2 delete [+] 
 11 : delete memcpy [+] 
 12 : core = 16 
+13 : core = 32
 
  " \
 > ./result/HBM_compare/test$testnum/log.txt 
 
 MEM_var=HBM_2000_4H_1x64
+size=512*MEM_chan
+
+
 
 for MEM_chan in 1 2 4 8 16  #메모리 종류 변경(default : 512MB) 
 do
 ../gem5/build/$isa/gem5.opt \
 --outdir=./result/HBM_compare/test$testnum/${MEM_chan}channel se.py \
---cpu-type X86O3CPU --cpu-clock 4GHz --num-cpus 16 \
---mem-type $MEM_var --mem-channels $MEM_chan \
+--cpu-type X86O3CPU --cpu-clock 4GHz --num-cpus 32 \
+--mem-type $MEM_var --mem-channels $MEM_chan --mem-size 8GB \
 --caches \
 --cmd ./workload/stream_strcpy_MP_2.1M \
 >> ./result/HBM_compare/test$testnum/${MEM_chan}channel.txt &
